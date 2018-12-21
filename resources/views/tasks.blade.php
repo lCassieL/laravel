@@ -58,12 +58,13 @@
                 </td>
 
                 <td>
-                    <form method="post">
-                        <input type="hidden" name="id" value="{{$task->id}}"/>
+                    <form action="{{url('task/'.$task->id)}}" method="post">
+<!--                        <input type="hidden" name="id" value="{{$task->id}}"/>-->
                         {{csrf_field()}}
+                        {{method_field('DELETE')}}
                         <button type="submit" class="btn btn-default">
-            <i class="fa fa-trash"></i> Удалить задачу
-          </button>
+                            <i class="fa fa-trash"></i> Удалить задачу
+                        </button>
                     </form>
                 </td>
               </tr>
